@@ -8,6 +8,10 @@
     <!-- Linking Bootstrap 4 stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- linking Bootstrap library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- linking Bootstrap JS library   -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!-- Linking CSS stylesheet -->
     <link rel="stylesheet" href="stylesheet.css">
 </head>
@@ -16,32 +20,57 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1>Quiz Generator</h1>
-            <p>Click one of the below option.</p>
+            <p>Placeholder---- Click one of the below option.</p>
         </div>
     </div>
 
-    <div class="container">
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optradio">Option 1
-            </label>
+    <!-- Main Body goes in Container -->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12  mt-1">
+
+                    <h2> <strong>Timer:</strong></h2>
+                    <hr>
+
+                </div>
+            </div>
+
+
+            <!-- https://www.w3docs.com/quiz/javascript-basic -->
+
+            <p class="question"> Question 1: How we can call myFunction function in javascript ? </p>
+            <!-- Answer: myFunction(...) -->
+
+            <!-- Answer options with radio button style -->
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio">Placeholder 1
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio">Placeholder 2
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio">Placeholder 3
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optradio">Placeholder 4
+                </label>
+            </div>
+            <!-- Button Bootstrap 4 -->
+            <div>
+                <button type="button" class="btn btn-primary">Next</button>
+            </div>
+
         </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optradio">Option 2
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optradio">Option 3
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optradio">Option 4
-            </label>
-        </div>
-    </div>
+    </main>
+
 </body>
 
 </html>
