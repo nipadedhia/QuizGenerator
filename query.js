@@ -27,21 +27,38 @@ function setTime() {
 //Calling timer function
 setTime();
 
-//Questions for Quiz Ref:  https://www.w3docs.com/quiz/javascript-basicvar
-var questions =
-    ["How you can Write "Hello W3docs" with alert ?",
-    "How we can call myFunction function in javascript ?",
-    "Which is correct way to use "If" in javascript ?",
-    "Which is the correct way to use comment in Javascript?",
-    "Javascript is the same as Java ?"
-    ];
+//Quiz Ref:  Asset -- Demo gif
 
-var choices1 = ["alertBox("Hello W3docs");", " alert("Hello W3docs");", "alemsg("Hello W3docs")", "msgBox("Hello W3docs")"];
-
-var choices2 = ["call function myFunction(...)", "funcall myFunction(...)", "myFunction(...)", "call myFunction(...)"];
-
-var choices3 = [" (if ...){...}", " if(...){...}", "call if (...) {...}", "if()"];
-
-var choices4 = ["{# ... #}", "<!--- .... ---!>", "// ....", "\\ ..."];
-
-var choices5 = ["Yes", "No", "Maybe", "Not sure"];
+//object to save the questions and answers. Last key value is used for saving the correct answers
+var quiz = {
+  question: [
+    "Commonly used Data types DO NOT include:",
+    "The condition in an if / else statement is enclosed within:",
+    "Arrays in JavaScript can be used to store:",
+    "String values must be enclosed within _____ when being assigned to variables.",
+    "A very useful tool used during development and debugging for printing content to the debugger is:",
+  ],
+  ansOpt1: [
+    "strings",
+    "quotes",
+    "numbers and strings",
+    "commas",
+    "console log",
+  ],
+  ansOpt2: [
+    "booleans",
+    "parentheses",
+    "other arrays",
+    "curly brackets",
+    "JavaScript",
+  ],
+  ansOpt3: ["alerts", "curly brackets", "booleans", "quotes", "for loops"],
+  ansOpt4: [
+    "numbers",
+    "square brackets",
+    "all of the above",
+    "parentheses",
+    "terminal / bash",
+  ],
+  corrAns: ["ansOpt3", "ansOpt2", "ansOpt4", "ansOpt3", "ansOpt1"],
+};
