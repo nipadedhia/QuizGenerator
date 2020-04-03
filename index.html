@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz</title>
     <!-- Linking Bootstrap 4 stylesheet -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- linking Bootstrap library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <!-- linking Bootstrap JS library   -->
@@ -20,57 +19,71 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1>Quiz Generator</h1>
-            <p>Placeholder---- Click one of the below option.</p>
+            <p>Placeholder</p>
         </div>
     </div>
 
+
     <!-- Main Body goes in Container -->
-    <main>
+    <div id="main">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12  mt-1">
 
-                    <h2> <strong>Timer:</strong></h2>
-                    <hr>
-
+            <!-- Start button for starting quiz -->
+            <div class="row" id="start">
+                <div class="col-sm-12 mt-1">
+                    <button type="button" class="btn btn-primary">Start</button>
                 </div>
             </div>
 
-
-            <!-- https://www.w3docs.com/quiz/javascript-basic -->
-
-            <p class="question"> Question 1: How we can call myFunction function in javascript ? </p>
-            <!-- Answer: myFunction(...) -->
-
-            <!-- Answer options with radio button style -->
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optradio">Placeholder 1
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optradio">Placeholder 2
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optradio">Placeholder 3
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optradio">Placeholder 4
-                </label>
-            </div>
-            <!-- Button Bootstrap 4 -->
-            <div>
-                <button type="button" class="btn btn-primary">Next</button>
+            <!-- Timer -->
+            <div class="row my-2" id="timer">
+                <!-- <div class="col-sm-12  mt-1"> -->
+                <h4></h4>
+                <hr>
             </div>
 
+            <!-- Section is created for quiz questions -->
+            <section id="question-section">
+                <div class="row">
+                    <div class="col-sm-12  mt-1">
+                        <h6 id="questions"></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 mt-1">
+                        <button id="option1" type="button" class="btn btn-primary">option1</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 mt-1">
+                        <button id="option2" type="button" class="btn btn-primary">option2</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 mt-1">
+                        <button id="option3" type="button" class="btn btn-primary">option3</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 mt-1">
+                        <button id="option4" type="button" class="btn btn-primary">option4</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <div id="timer"></div>
+            <div class="questions"></div>
+            <div class="options"></div>
+            <div class="answers"></div> -->
+
+
+
+
+            <script src="./query.js"></script>
         </div>
-    </main>
-
+    </div>
 </body>
 
 </html>

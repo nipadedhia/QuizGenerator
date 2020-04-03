@@ -4,10 +4,18 @@
     font-size: large;
 }
 
-.form-check {
-padding-bottom: 1rem;
-}
+h6 {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+  }
+  
 
-.question {
+#questions {
     padding-bottom: .25rem;
 }
+
+#options {
+    padding-bottom: .25rem;
+}
+
