@@ -9,6 +9,9 @@ var ansOpt4 = document.querySelector("#ans-opt4");
 var answerEl = document.querySelector("#answer");
 var questionSection = document.querySelector("#question-section");
 var finalScoreEl = document.querySelector("#finalScore");
+var submitEL = document.querySelector("#submit");
+var initialText = document.querySelector("#initial-text");
+var initialForm = document.querySelector("#initial-form");
 
 var timeLeft;
 
@@ -63,15 +66,18 @@ var quiz = {
 };
 
 questionSection.style.display = "none";
+initialText.style.display = "none";
 
 // calling function for displaying questions when click on start button
 startEl.addEventListener("click", function () {
-  startQuiz();
+  startQuiz(); //calling startQuiz function
 });
 
+//start quiz upon clicking start button
 function startQuiz() {
   startEl.style.display = "none";
   questionSection.style.display = "block";
+  initialText.style.display = "none";
   renderQuiz();
   timeLeft = 60;
   setTime();
@@ -91,6 +97,7 @@ function renderQuiz() {
   } else {
     checkAnswer();
     questionSection.style.display = "none";
+
     scoreRender(); // calling scoreRender function
   }
 }
@@ -98,6 +105,7 @@ function renderQuiz() {
 //defining scoreRender function for displaying final score
 function scoreRender() {
   finalScoreEl.textContent = "Your final score is  " + timeLeft;
+  initialText.style.display = "block";
 }
 
 // Checking answer
@@ -109,3 +117,15 @@ function checkAnswer() {
     timeLeft -= 10;
   }
 }
+
+//defining object for saving score
+var listInitialScore;
+
+//endQuiz function
+function endQuiz() {}
+
+//When initials is submitted
+initialForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  endQuiz();
+});

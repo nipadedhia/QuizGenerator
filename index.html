@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>QuizGenerator</title>
     <!-- Linking Bootstrap 4 stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- linking Bootstrap library -->
@@ -18,7 +18,7 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1>Quiz Generator</h1>
+            <h1>Quiz Challenge</h1>
             <p>Placeholder</p>
         </div>
     </div>
@@ -89,11 +89,6 @@
                         <h6 id="answer"></h6>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 mt-1">
-                        <!-- <form action=""></form>   fix this -->
-                    </div>
-                </div>
             </section>
 
             <!-- displaying final score -->
@@ -102,6 +97,21 @@
                     <h4 id="finalScore"></h4>
                 </div>
             </div>
+
+            <!-- Input Initials -->
+            <div class="row" id="initial-text">
+                <div class="col-sm-12 mt-1">
+                    <!-- form action for input initial -->
+                    <form id="initial-form" method="POST">
+                        <label for="initial-text">Initials:</label>
+                        <input type="text" placeholder="Initials" />
+                        <button id="submit" type="button" class="btn btn-primary" onclick="endQuiz()">Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+
 
             <script src="./query.js"></script>
         </div>
