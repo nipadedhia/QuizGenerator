@@ -35,51 +35,73 @@
                 </div>
             </div>
 
-            <!-- Timer -->
-            <div class="row my-2" id="timer">
-                <!-- <div class="col-sm-12  mt-1"> -->
-                <h4></h4>
-                <hr>
-            </div>
+
 
             <!-- Section is created for quiz questions -->
+
+
             <section id="question-section">
+
+                <!-- Timer -->
+                <div class="row my-2" id="timer">
+                    <!-- <div class="col-sm-12  mt-1"> -->
+                    <h4></h4>
+                    <hr>
+                </div>
+
+                <!-- Listing questions and answers -->
                 <div class="row">
                     <div class="col-sm-12  mt-1">
-                        <h6 id="quiz"></h6>
+                        <h6 id="question"></h6>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 mt-1">
-                        <button id="option1" type="button" class="btn btn-primary">option1</button>
+                        <button id="ans-opt1" type="button" class="btn btn-primary"
+                            onclick="renderQuiz()">option1</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 mt-1">
-                        <button id="option2" type="button" class="btn btn-primary">option2</button>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12 mt-1">
-                        <button id="option3" type="button" class="btn btn-primary">option3</button>
+                        <button id="ans-opt2" type="button" class="btn btn-primary"
+                            onclick="renderQuiz()">option2</button>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-12 mt-1">
-                        <button id="option4" type="button" class="btn btn-primary">option4</button>
+                        <button id="ans-opt3" type="button" class="btn btn-primary"
+                            onclick="renderQuiz()">option3</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 mt-1">
+                        <button id="ans-opt4" type="button" class="btn btn-primary" onclick="renderQuiz()">option4
+                        </button>
+                    </div>
+                </div>
+
+                <hr>
+                <!-- Answer correct or wrong -->
+                <div class="row">
+                    <div class="col-sm-12 mt-1">
+                        <h6 id="answer"></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 mt-1">
+                        <!-- <form action=""></form>   fix this -->
                     </div>
                 </div>
             </section>
 
-            <!-- <div id="timer"></div>
-            <div class="questions"></div>
-            <div class="options"></div>
-            <div class="answers"></div> -->
-
-
-
+            <!-- displaying final score -->
+            <div class="row">
+                <div class="col-sm-12  mt-1">
+                    <h4 id="finalScore"></h4>
+                </div>
+            </div>
 
             <script src="./query.js"></script>
         </div>
