@@ -19,7 +19,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1>Quiz Challenge</h1>
-            <p>Placeholder</p>
+            <p>This is a challenge quiz. Your final score is time left after answering all questions. For every wrong answer, 10 seconds are deducted.</p>
         </div>
     </div>
 
@@ -52,7 +52,7 @@
                 <!-- Listing questions and answers -->
                 <div class="row">
                     <div class="col-sm-12  mt-1">
-                        <h6 id="question"></h6>
+                        <h5 id="question"></h5>
                     </div>
                 </div>
                 <div class="row">
@@ -86,36 +86,49 @@
                 <!-- Answer correct or wrong -->
                 <div class="row">
                     <div class="col-sm-12 mt-1">
-                        <h6 id="answer"></h6>
+                        <h5 id="answer"></h5>
                     </div>
                 </div>
             </section>
 
-            <!-- displaying final score -->
-            <div class="row">
-                <div class="col-sm-12  mt-1">
-                    <h4 id="finalScore"></h4>
+            <section id="initial-text">
+                <!-- displaying final score -->
+                <div class="row">
+                    <div class="col-sm-12  mt-1">
+                        <h4 id="finalScore"></h4>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Input Initials -->
-            <div class="row" id="initial-text">
-                <div class="col-sm-12 mt-1">
-                    <!-- form action for input initial -->
-                    <form id="initial-form" method="POST">
-                        <label for="initial-text">Initials:</label>
-                        <input type="text" placeholder="Initials" />
-                        <button id="submit" type="button" class="btn btn-primary" onclick="endQuiz()">Submit
-                        </button>
-                    </form>
+                <!-- Input Initials -->
+                <div class="row">
+                    <div class="col-sm-12 mt-1">
+                        <!-- form action for input initial -->
+                        <form id="initial-form" method="POST">
+                            <label for="initial-text">Initials:</label>
+                            <input type="text" id="box" placeholder="Initials" />
+                            <button id="submit" type="button" class="btn btn-primary" onclick="endQuiz()">Submit
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- displaying high scores, Go back button and clear high score button -->
+            <section id="last">
+                <div class="row">
+                    <div class="col-sm-12 mt-1">
+                        <h3>Highscores</h3>
+                        <h5 id="showHighScore"></h5>
+                        <button type="button" class="btn btn-danger" onclick="startQuiz()">Go back</button>
+                        <button type="button" class="btn btn-danger" onclick="clearScore()">Clear</button>
+                    </div>
+                </div>
 
 
-
-            <script src="./query.js"></script>
+            </section>
         </div>
     </div>
+    <script src="./query.js"></script>
 </body>
 
 </html>

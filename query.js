@@ -12,23 +12,28 @@ var finalScoreEl = document.querySelector("#finalScore");
 var submitEL = document.querySelector("#submit");
 var initialText = document.querySelector("#initial-text");
 var initialForm = document.querySelector("#initial-form");
+var boxEL = document.querySelector("#box");
+var lastEL = document.querySelector("#last");
+var showHighScoreEL = document.querySelector("#showHighScore");
 
 var timeLeft;
+var timerInterval;
 
 // Setting up timer when page is loaded
 function setTime() {
-  var timerInterval = setInterval(function () {
+  timerInterval = setInterval(function () {
     timeLeft--;
     timeEl.textContent = "Timer: " + timeLeft;
 
     if (timeLeft === 0) {
-      clearInterval(timerInterval);
+      stopTimer();
     }
   }, 1000);
 }
 
-//Calling timer function
-// setTime();
+function stopTimer() {
+  clearInterval(timerInterval);
+}
 
 //Quiz Ref:  Asset -- Demo gif
 //object to save the questions and answers. Last key value is used for saving the correct answers
@@ -67,6 +72,7 @@ var quiz = {
 
 questionSection.style.display = "none";
 initialText.style.display = "none";
+lastEL.style.display = "none";
 
 // calling function for displaying questions when click on start button
 startEl.addEventListener("click", function () {
@@ -79,13 +85,14 @@ function startQuiz() {
   questionSection.style.display = "block";
   initialText.style.display = "none";
   renderQuiz();
-  timeLeft = 60;
+  timeLeft = 90;
   setTime();
 }
 
 // var i = 0 is for index 0 is array. Function renderQuiz is to call out questions and 4 options from arrays
 var i = 0;
 function renderQuiz() {
+  lastEL.style.display = "none";
   if (i < 5) {
     questList.textContent = quiz.question[i];
     ansOpt1.textContent = quiz.ansOpt1[i];
@@ -102,10 +109,14 @@ function renderQuiz() {
   }
 }
 
+var score = 0;
 //defining scoreRender function for displaying final score
 function scoreRender() {
-  finalScoreEl.textContent = "Your final score is  " + timeLeft;
+  score = timeLeft;
+  i = 0;
+  finalScoreEl.textContent = "Your final score is  " + score;
   initialText.style.display = "block";
+  stopTimer();
 }
 
 // Checking answer
@@ -119,13 +130,41 @@ function checkAnswer() {
 }
 
 //defining object for saving score
-var listInitialScore;
+var listInitialScore = {
+  initial: [],
+  scores: [],
+};
 
 //endQuiz function
-function endQuiz() {}
+function endQuiz() {
+  listInitialScore.initial.push(boxEL.value.trim());
+  listInitialScore.scores.push(score);
+
+  renderHighScore();
+}
 
 //When initials is submitted
 initialForm.addEventListener("submit", function (event) {
   event.preventDefault();
   endQuiz();
 });
+
+function renderHighScore() {
+  initialText.style.display = "none";
+  lastEL.style.display = "block";
+
+  var p;
+  showHighScoreEL.textContent = "";
+  for (var j = 0; j < listInitialScore.initial.length; j++) {
+    p = document.createElement("p");
+    p.textContent =
+      listInitialScore.initial[j] + "  " + listInitialScore.scores[j];
+    showHighScoreEL.appendChild(p);
+  }
+}
+
+function clearScore() {
+  showHighScoreEL.textContent = "";
+  listInitialScore.initial = [];
+  listInitialScore.scores = [];
+}
