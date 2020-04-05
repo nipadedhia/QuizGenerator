@@ -70,9 +70,10 @@ var quiz = {
   corrAns: ["ans-opt3", "ans-opt2", "ans-opt4", "ans-opt3", "ans-opt1"],
 };
 
-questionSection.style.display = "none";
-initialText.style.display = "none";
-lastEL.style.display = "none";
+//question section, Initial text box, Go back and Clear button are made invisible so when quiz start they are not appeared
+questionSection.style.display = "none"; //question section
+initialText.style.display = "none"; // initial text box
+lastEL.style.display = "none"; // Go back and clear button
 
 // calling function for displaying questions when click on start button
 startEl.addEventListener("click", function () {
@@ -82,10 +83,10 @@ startEl.addEventListener("click", function () {
 //start quiz upon clicking start button
 function startQuiz() {
   startEl.style.display = "none";
-  questionSection.style.display = "block";
+  questionSection.style.display = "block"; //question section is displays
   initialText.style.display = "none";
   renderQuiz();
-  timeLeft = 90;
+  timeLeft = 90; // timer set for 90 seconds
   setTime();
 }
 
@@ -99,7 +100,7 @@ function renderQuiz() {
     ansOpt2.textContent = quiz.ansOpt2[i];
     ansOpt3.textContent = quiz.ansOpt3[i];
     ansOpt4.textContent = quiz.ansOpt4[i];
-    checkAnswer();
+    checkAnswer(); // calling check answer function
     i++;
   } else {
     checkAnswer();
@@ -119,7 +120,7 @@ function scoreRender() {
   stopTimer();
 }
 
-// Checking answer
+// Check answer function
 function checkAnswer() {
   if (event.srcElement.id == quiz.corrAns[i - 1]) {
     answerEl.textContent = "Your answer is correct";
@@ -139,7 +140,6 @@ var listInitialScore = {
 function endQuiz() {
   listInitialScore.initial.push(boxEL.value.trim());
   listInitialScore.scores.push(score);
-
   renderHighScore();
 }
 
@@ -163,6 +163,7 @@ function renderHighScore() {
   }
 }
 
+// clearing data upon clicking clear button
 function clearScore() {
   showHighScoreEL.textContent = "";
   listInitialScore.initial = [];
