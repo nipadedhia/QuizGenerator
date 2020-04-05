@@ -9,7 +9,6 @@ When done with answering all questions, final score will be displayed
 Input initials and click on submit button
 Clicking upon Go back button, will navigate to Start Quiz page
 Clicking on Clear button, all score will get clear
-```
 
 Quiz questions are taken from: 
 ![code quiz](./Assets/04-web-apis-homework-demo.gif)
